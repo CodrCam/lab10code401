@@ -1,5 +1,6 @@
 package datastructures;
 
+import datastrucures.AnimalShelter;
 import datastrucures.PseudoQueue;
 import stackandqueue.Queue;
 import stackandqueue.Stack;
@@ -153,4 +154,27 @@ public class DataStructureTests {
         pseudoQueue.dequeue();
         assertThrows(IllegalStateException.class, pseudoQueue::dequeue);
     }
+
+    @Test
+    public void testAnimalShelterEnqueueDequeue() {
+        System.out.println("testAnimalShelterEnqueueDequeue");
+        AnimalShelter shelter = new AnimalShelter();
+        AnimalShelter.Animal dog = new AnimalShelter.Animal("dog", "Rex");
+        AnimalShelter.Animal cat = new AnimalShelter.Animal("cat", "Mittens");
+        shelter.enqueue(dog);
+        shelter.enqueue(cat);
+        assertEquals(dog, shelter.dequeue("dog"));
+        assertEquals(cat, shelter.dequeue("cat"));
+    }
+
+    @Test
+    public void testAnimalShelterDequeueInvalidPref() {
+        System.out.println("testAnimalShelterDequeueInvalidPref");
+        AnimalShelter shelter = new AnimalShelter();
+        AnimalShelter.Animal dog = new AnimalShelter.Animal("dog", "Rex");
+        shelter.enqueue(dog);
+        assertNull(shelter.dequeue("rabbit"));
+    }
+
 }
+
