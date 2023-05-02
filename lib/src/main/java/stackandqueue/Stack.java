@@ -1,4 +1,6 @@
-package datastrucures;
+package stackandqueue;
+
+import datastrucures.Node;
 
 public class Stack {
     private Node top;
