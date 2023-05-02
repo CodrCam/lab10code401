@@ -44,6 +44,15 @@ To run the tests for the application, use the following command:
 
 The tests will validate the functionality of the Stack, Queue, and PseudoQueue classes, ensuring proper operation of push, pop, peek, and isEmpty methods for Stack, enqueue, dequeue, peek, and isEmpty methods for Queue, and enqueue and dequeue methods for PseudoQueue.
 
+## Time Spent on coding problem
+
+.2 hours on prep
+
+.40 hours on the build
+
+.6 hours total
+
+
 ## Built With
 
 - [Java](https://www.oracle.com/java/) - The programming language used
