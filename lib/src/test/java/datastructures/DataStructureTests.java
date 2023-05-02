@@ -1,8 +1,9 @@
 package datastructures;
 
+import datastrucures.PseudoQueue;
+import stackandqueue.Queue;
+import stackandqueue.Stack;
 
-import datastrucures.Queue;
-import datastrucures.Stack;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -111,5 +112,45 @@ public class DataStructureTests {
         assertThrows(IllegalStateException.class, queue::dequeue);
         assertThrows(IllegalStateException.class, queue::peek);
     }
-}
 
+    @Test
+    public void testPseudoQueueEnqueue() {
+        System.out.println("testPseudoQueueEnqueue");
+        PseudoQueue pseudoQueue = new PseudoQueue();
+        pseudoQueue.enqueue(1);
+        assertEquals(1, pseudoQueue.dequeue());
+    }
+
+    @Test
+    public void testPseudoQueueEnqueueMultiple() {
+        System.out.println("testPseudoQueueEnqueueMultiple");
+        PseudoQueue pseudoQueue = new PseudoQueue();
+        pseudoQueue.enqueue(1);
+        pseudoQueue.enqueue(2);
+        pseudoQueue.enqueue(3);
+        assertEquals(1, pseudoQueue.dequeue());
+        assertEquals(2, pseudoQueue.dequeue());
+        assertEquals(3, pseudoQueue.dequeue());
+    }
+
+    @Test
+    public void testPseudoQueueDequeue() {
+        System.out.println("testPseudoQueueDequeue");
+        PseudoQueue pseudoQueue = new PseudoQueue();
+        pseudoQueue.enqueue(1);
+        pseudoQueue.enqueue(2);
+        assertEquals(1, pseudoQueue.dequeue());
+        assertEquals(2, pseudoQueue.dequeue());
+    }
+
+    @Test
+    public void testPseudoQueueEmpty() {
+        System.out.println("testPseudoQueueEmpty");
+        PseudoQueue pseudoQueue = new PseudoQueue();
+        pseudoQueue.enqueue(1);
+        pseudoQueue.enqueue(2);
+        pseudoQueue.dequeue();
+        pseudoQueue.dequeue();
+        assertThrows(IllegalStateException.class, pseudoQueue::dequeue);
+    }
+}
