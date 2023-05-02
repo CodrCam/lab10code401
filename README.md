@@ -1,6 +1,6 @@
-# Stack, Queue, and PseudoQueue Implementation
+# Stack, Queue, PseudoQueue, and AnimalShelter Implementation
 
-The Stack, Queue, and PseudoQueue Implementation is a simple Java program that demonstrates the usage of Linked Lists as the underlying data storage mechanism for Stack and Queue data structures. The application contains three classes, `Stack`, `Queue`, and `PseudoQueue`, which implement the respective data structures and their associated operations.
+The Stack, Queue, PseudoQueue, and AnimalShelter Implementation is a simple Java program that demonstrates the usage of Linked Lists as the underlying data storage mechanism for Stack, Queue, and PseudoQueue data structures, as well as a specific use case with an AnimalShelter class. The application contains several classes, which implement the respective data structures and their associated operations.
 
 ## Application Overview
 
@@ -10,7 +10,8 @@ The application consists of the following main components:
 2. `Stack` class: Implements a Stack data structure using a Linked List, with methods such as push, pop, peek, and isEmpty.
 3. `Queue` class: Implements a Queue data structure using a Linked List, with methods such as enqueue, dequeue, peek, and isEmpty.
 4. `PseudoQueue` class: Implements a Queue-like data structure using two Stack instances, with methods such as enqueue and dequeue. This class demonstrates the usage of two stacks to simulate the behavior of a queue.
-5. `DataStructureTests` class: Contains JUnit Jupiter tests for validating the functionality of the Stack, Queue, and PseudoQueue classes.
+5. `AnimalShelter` class: Implements an AnimalShelter that holds dogs and cats, with methods such as enqueue and dequeue based on a first-in, first-out approach.
+6. `DataStructureTests` class: Contains JUnit Jupiter tests for validating the functionality of the Stack, Queue, PseudoQueue, and AnimalShelter classes.
 
 ## Getting Started
 
@@ -42,16 +43,15 @@ To run the tests for the application, use the following command:
 
 `$ gradle test`
 
-The tests will validate the functionality of the Stack, Queue, and PseudoQueue classes, ensuring proper operation of push, pop, peek, and isEmpty methods for Stack, enqueue, dequeue, peek, and isEmpty methods for Queue, and enqueue and dequeue methods for PseudoQueue.
+The tests will validate the functionality of the Stack, Queue, PseudoQueue, and AnimalShelter classes, ensuring proper operation of push, pop, peek, and isEmpty methods for Stack, enqueue, dequeue, peek, and isEmpty methods for Queue, enqueue and dequeue methods for PseudoQueue, and enqueue and dequeue methods for AnimalShelter.
 
 ## Time Spent on coding problem
 
-.2 hours on prep
+.25 hours on prep
 
-.40 hours on the build
+.80 hours on the build
 
-.6 hours total
-
+1.05 hours total
 
 ## Built With
 
