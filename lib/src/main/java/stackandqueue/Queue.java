@@ -1,51 +1,55 @@
 package stackandqueue;
 
-import datastrucures.Node;
-
-public class Queue {
-    private Node front;
-    private Node rear;
+public class Queue<T> {
+    private Node<T> front;
+    private Node<T> rear;
 
     public Queue() {
         front = null;
         rear = null;
     }
 
-    public void enqueue(int value) {
-        Node newNode = new Node(value);
-
-        if (isEmpty()) {
+    public void enqueue(T value) {
+        Node<T> newNode = new Node<>(value);
+        if (rear == null) {
             front = rear = newNode;
-        } else {
-            rear.next = newNode;
-            rear = newNode;
+            return;
         }
+        rear.next = newNode;
+        rear = newNode;
     }
 
-    public int dequeue() {
+    public T dequeue() {
         if (isEmpty()) {
             throw new IllegalStateException("Queue is empty");
         }
-
-        int value = front.value;
+        T value = front.value;
         front = front.next;
 
         if (front == null) {
             rear = null;
         }
-
         return value;
     }
 
-    public int peek() {
+    public T peek() {
         if (isEmpty()) {
             throw new IllegalStateException("Queue is empty");
         }
-
         return front.value;
     }
 
     public boolean isEmpty() {
         return front == null;
+    }
+
+    private static class Node<T> {
+        private T value;
+        private Node<T> next;
+
+        public Node(T value) {
+            this.value = value;
+            this.next = null;
+        }
     }
 }
